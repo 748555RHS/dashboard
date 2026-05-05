@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    display: flex;
+    background-color: rgb(194, 194, 194);
+    height: 110px;
+    width: 100%;
+    line-height: 100px;
+    position: relative;
+    font-family: 'BaseFont';
+    color: black;
+    font-size: 20px;
+    border-bottom: 5px solid black;
+}
+
+#body{
+    font-family: 'BaseFont', Courier, monospace;
+    display: flex;
+    height: 1500px;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(224, 222, 222);
+}
+
+@font-face {
+    font-family: 'BaseFont';
+    src: url('Speedy.ttf') format('woff2'),
+         url('Speedy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#headerImg{
+    height: 90%;
+    width: 10%;
+    margin-left: auto;
+    margin-right: 35px;
+}
+
+#bodyContent{
+    margin: auto;
+    background-color: rgb(194, 194, 194);
+    height: 90%;
+    width: 65%;
+    text-align: center;
+    border-radius: 10px;
+    border: 5px solid black;
+    justify-content: center;
+}
+
+.clock-container {
+    margin: auto;
+    height: 50px;
+    width: 200px;
+    background-color: #222;
+    border-radius: 4px;
+    font-size: 2rem;
+    color: rgb(194, 194, 194);
+    line-height: 50px;
+    display: block;
+    margin-top: 20px;
+}
+
+.sepDiv{
+    height: 190px;
+    width: 100%;
+    border-bottom: 5px solid black;
+}
+
+.switch {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 25px;
+    margin: auto;
+    margin-top: 50px;
+}
+  
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+  
+input:checked + .slider {
+    background-color: rgb(255, 0, 0);
+}
+  
+input:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+.inverted {
+    filter: invert(100%) !important;
+}
+
+#header, .clock-container, #bodyContent {
+    transition: filter 0.3s ease;
+}
+
+#header.inverted #headerImg {
+    filter: invert(100%);
+}
+
+#weather-container {
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent dark box */
+    padding: 15px;
+    border-radius: 8px;
+    width: 200px;
+    margin: 10px auto;
+    color: inherit; /* Follows the light/dark mode filter */
+}
+
+#temperature {
+    font-size: 2.5rem;
+    margin: 5px 0;
+}
+
+#location {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+#customSepDiv a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    background-color: #a7a7a7;
+    width: 200px;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+#customSepDiv a:hover{
+    background-color: #707070;
+}
+
+#customSepDiv{
+    height: 190px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 5px solid black;
+}
+
+#drawBoard {
+    display: block;
+    background-color: white;
+    border: 2px solid #555;
+    cursor: crosshair;
+    margin-top: 10px;
+    border-radius: 5px;
+    touch-action: none;
+    height: 135px;
+    width: 400px;
+    margin: auto;
+}
+
+#customClearBtn {
+    display: block;
+    top: 50px; 
+    left: 20px;
+    resize: both; 
+    width: 200px;
+    height: 30px;
+    min-width: 50px;
+    min-height: 30px;
+    background-color: #ff4444;
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    font-family: 'BaseFont', sans-serif;
+    cursor: pointer;
+    z-index: 100;
+    margin: auto;
+}
+
+#customClearBtn:hover {
+    background-color: #cc0000;
+}
+
+#scareOverlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 9999; /* Higher than everything else */
+    justify-content: center;
+    align-items: center;
+}
+
+#scareImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+#scareBtn {
+    margin-top: 50px;
+    padding: 10px 20px;
+    background-color: #222;
+    color: #ff4444;
+    font-weight: bold;
+    border: 2px solid #ff4444;
+    cursor: pointer;
+    font-family: 'BaseFont', sans-serif;
+}
+
+#scareBtn:hover {
+    background-color: #ff4444;
+    color: white;
+}
+
+.year-bar-container {
+    width: 80%;
+    height: 12px;
+    background-color: #333;
+    border-radius: 6px;
+    margin: 15px auto 5px;
+    overflow: hidden;
+    border: 1px solid #444;
+    margin-top: 50px;
+}
+
+#year-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff4444, #ff8844);
+    box-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+    transition: width 1s ease-in-out;
+}
+
+#year-text {
+    font-family: 'BaseFont', sans-serif;
+    font-size: 0.8rem;
+    color: inherit;
+    margin-top: 5px;
+}

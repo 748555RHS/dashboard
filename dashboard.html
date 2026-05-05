@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<!--
+Egor Butsman
+Personal Dashboard
+4/7/26
+-->
+
+<html>
+    <head>
+        <title>My Dashboard</title>
+        <link rel="stylesheet" href="dashboardStyle.css">
+    </head>
+    <body>
+        <header id="header">
+            <p style="margin-left: 35px; display: inline;">WELCOME TO EGOR'S DASHBOARD</p>
+            <p style="margin-left: auto;">Find some cool stuff below!</p>
+            <img id="headerImg" src="headerImage2.png">
+        </header>
+        <div id="body">
+            <div id="bodyContent">
+                <div class="sepDiv">
+                    The time right now
+                    <div class="clock-container">
+                        <div id="digital-clock">00:00:00</div>
+                    </div>
+                </div>
+                <div class="sepDiv">
+                    Dark/Light Mode Switch
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="sepDiv">
+                    Weather Forecast
+                    <div id="weather-container">
+                        <p id="location">Loading location...</p>
+                        <h2 id="temperature">--°C</h2>
+                        <p id="description">Fetching forecast...</p>
+                    </div>
+                </div>
+                <div class="sepDiv">
+                    Sketch Pad
+                    <canvas id="drawBoard" width="400" height="200"></canvas>
+                    <button id="customClearBtn">Clear Board</button>
+                </div>
+                <div class="sepDiv">
+                    <div class="sepDiv">
+                        <p>Year Progress</p>
+                        <div class="year-bar-container">
+                            <div id="year-bar-fill"></div>
+                        </div>
+                        <p id="year-text">0%</p>
+                    </div>
+                </div>
+                <div id="customSepDiv">
+                    Some Websites To Check Out
+                    <a href="https://www.google.com/">Google</a>
+                    <a href="https://www.youtube.com/">YouTube</a>
+                    <a href="https://www.coolmathgames.com/">Cool Math Games</a>
+                    <a href="https://scratch.mit.edu/">Scratch</a>
+                    <a href="https://neal.fun/">Neal Fun</a>
+                </div>
+                <div class="SepDiv">
+                    <button id="scareBtn">DO NOT CLICK</button>
+                </div>
+            </div>
+        </div>
+        <div id="scareOverlay">
+            <img src="headerImage.jpg" id="scareImg">
+        </div>
+        <script src="dashboard.js"></script>
+    </body>
+</html>
